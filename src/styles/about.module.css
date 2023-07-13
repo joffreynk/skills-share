@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+    .imageContainer{
+      width: 800px;
+      height: 500px;
+
+      .img {
+        object-fit: cover;
+        width: 800px;
+        height: 400px;
+      }
+    }
+
+
+
+    .aboutDiscriminationContainer{
+
+    }
+}
