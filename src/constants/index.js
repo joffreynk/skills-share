@@ -35,26 +35,31 @@ export const socialLinks = [
   {
     id: 1,
     imgUrl: "/facebook.png",
+    title: "facebook",
     link: "https://www.facebook.com/joffreynk7"
   },
   {
     id: 2,
     imgUrl: "/twitter.png",
+    title: "twitter",
     link: "/https://www.twitter.com/joffreynk"
   },
   {
     id: 3,
     imgUrl: "/linkedin.png",
+    title: "linkedin",
     link: "https://www.linkedin.com/in/joffreynk/"
   },
   {
     id: 4,
     imgUrl: "/website.png",
+    title: "website",
     link: "https://joffrey-portfolio.netlify.app/"
   },
   {
     id: 4,
     imgUrl: "/github.png",
+    title: "github",
     link: "https://github.com/joffreynk"
   },
 ]
