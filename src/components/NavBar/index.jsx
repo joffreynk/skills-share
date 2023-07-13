@@ -1,20 +1,19 @@
 import { navBarLinks } from "@/constants"
 import Link from "next/link"
-
+import styles from "./page.module.css"
 const NavBar = () => {
   return (
-    <header>
-      <nav>
-        <div>
+      <nav className={styles.container}>
+        <div className={styles.logo}>
           <Link href='/'>Skills-share</Link>
         </div>
-        <div>
+        <div className={styles.links}>
         {navBarLinks.map(link=>(
-            <Link key={link.id} href={link.url} >{link.title}</Link>
+            <Link className={styles.link} key={link.id} href={link.url} >{link.title}</Link>
         ))}
+        <button type="button" className={styles.button}>Logout</button>
         </div>
       </nav>
-    </header>
   )
 }
 
