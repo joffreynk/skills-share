@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 20px;
 
   .right {
     font-size: 15px;
