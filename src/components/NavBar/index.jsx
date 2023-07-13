@@ -1,6 +1,6 @@
 import { navBarLinks } from "@/constants"
 import Link from "next/link"
-import styles from "./page.module.css"
+import styles from '@/styles/navBar.module.css'
 const NavBar = () => {
   return (
       <nav className={styles.container}>

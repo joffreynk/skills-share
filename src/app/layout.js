@@ -1,6 +1,9 @@
 import NavBar from '@/components/NavBar'
 import './globals.css'
+// import { Roboto } from 'next/font/google'
 import Footer from '@/components/Footer'
+
+// const inter = Roboto({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'skills share',
@@ -10,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='container'>
+      <body className={`container` }>
         <NavBar />
         {children}
         <Footer />
