@@ -34,7 +34,27 @@ export const navBarLinks = [
 export const socialLinks = [
   {
     id: 1,
-    imgUrl: "Dashboard",
-    link: "/dashboard"
+    imgUrl: "/facebook.png",
+    link: "https://www.facebook.com/joffreynk7"
+  },
+  {
+    id: 2,
+    imgUrl: "/twitter.png",
+    link: "/https://www.twitter.com/joffreynk"
+  },
+  {
+    id: 3,
+    imgUrl: "/linkedin.png",
+    link: "https://www.linkedin.com/in/joffreynk/"
+  },
+  {
+    id: 4,
+    imgUrl: "/website.png",
+    link: "https://joffrey-portfolio.netlify.app/"
+  },
+  {
+    id: 4,
+    imgUrl: "/github.png",
+    link: "https://github.com/joffreynk"
   },
 ]
