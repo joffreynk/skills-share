@@ -29,14 +29,12 @@ export const navBarLinks = [
     title: "Dashboard",
     url: "/dashboard"
   },
-  // {
-  //   id: 7,
-  //   title: "",
-  //   url: ""
-  // },
-  // {
-  //   id: 8,
-  //   title: "",
-  //   url: ""
-  // },
+]
+
+export const socialLinks = [
+  {
+    id: 1,
+    imgUrl: "Dashboard",
+    link: "/dashboard"
+  },
 ]
