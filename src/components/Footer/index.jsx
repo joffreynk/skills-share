@@ -2,16 +2,18 @@ import { socialLinks } from "@/constants"
 import Image from "next/image"
 import Link from "next/link"
 
+import styles from './page.module.css'
+
 const Footer = () => {
   return (
-    <footer >
-      <p>
+    <footer className={styles.container} >
+      <p className={styles.right}>
         skills share @ {new Date().getFullYear()} all right reserved
       </p>
-      <div>
+      <div className={styles.socialICons}>
         {
           socialLinks.map(social=>(
-            <Link key={`${social.id}- ${social.title}`} href={social.link}> <Image src={social.imgUrl} width={22} height={22} alt={social.title} /> </Link>
+            <Link className={styles.social} key={`${social.id}- ${social.title}`} href={social.link}> <Image src={social.imgUrl} width={25} height={25} alt={social.title} /> </Link>
           ))
         }
       </div>

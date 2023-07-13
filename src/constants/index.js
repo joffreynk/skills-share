@@ -42,7 +42,7 @@ export const socialLinks = [
     id: 2,
     imgUrl: "/twitter.png",
     title: "twitter",
-    link: "/https://www.twitter.com/joffreynk"
+    link: "https://www.twitter.com/joffreynk"
   },
   {
     id: 3,
