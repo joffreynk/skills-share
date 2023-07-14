@@ -30,10 +30,7 @@
         left: 15px;
       }
 
-      .service:hover .serviceTitle {
-        background: rgb(255, 254, 254, .6);
-        color: rgb(75, 151, 151);
-      }
+      
     }
 
     .service:nth-child(1) {
@@ -46,6 +43,11 @@
 
     .service:nth-child(3) {
       background: url("/collaboration.jpg") no-repeat;
+    }
+
+    .service:hover .serviceTitle {
+      color: rgb(49, 52, 207);
+      background: #797878;
     }
 
   }
