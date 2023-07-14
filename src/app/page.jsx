@@ -13,7 +13,7 @@ export default function Home() {
         <CustomButton url='/portfolio' text='see our works' />
       </div>
       <div>
-        <Image src='/hero.jpg' width={700} height={500} alt='hello image' />
+        <Image src='/home2.jpg' width={700} height={500} alt='hello image' />
       </div>
       <div>
       </div>
