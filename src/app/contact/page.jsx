@@ -9,7 +9,7 @@ const Contact = () => {
       <h1 className={styles.title} >Let&apos;s keep in Touch</h1>
       <div className={styles.cardContainer} >
         <div  className={styles.item} >
-          <Image fill alt='call center' src='/callcenter.png' />
+          <Image className={styles.img} fill alt='call center' src='/callcenter.png' />
         </div>
         <div  className={styles.item} >
           <form action="" className={styles.form}>

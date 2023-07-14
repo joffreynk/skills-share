@@ -25,6 +25,20 @@
       height: 50vh;
       position: relative;
 
+      .img {
+        object-fit: contain;
+        animation: move 3s infinite ease alternate;
+      }
+
+      @keyframes move {
+        from {
+          transform: translateY(-25px)
+        }
+        to {
+          transform: translateY(0px) scale(1.03)
+        }
+      }
+
       .form {
         display: flex;
         flex-direction: column;
