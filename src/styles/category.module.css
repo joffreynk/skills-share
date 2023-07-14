@@ -1,11 +1,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
+
   .title {
     text-transform: capitalize;
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
+    text-decoration: underline;
   }
 
 
@@ -24,7 +26,7 @@
       position: relative;
 
       .img {
-        object-fit: contain;
+        object-fit: cover;
       }
     }
 
@@ -32,6 +34,7 @@
     .textContainer {
       display: flex;
       flex-direction: column;
+      align-self: center;
       gap: 2rem;
       flex: 1;
 
@@ -45,5 +48,9 @@
       }
     }
 
+  }
+
+  .content:nth-child(2n+1){
+    flex-direction: row-reverse;
   }
 }
