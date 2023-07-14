@@ -7,11 +7,11 @@ const Contact = () => {
     <div className={styles.container}>
       <h1>Let&apos;s keep in Touch</h1>
       <div className={styles.cardContainer} >
-        <div  className={styles.imgContainer} >
-          <Image src='/callcenter.jpg' />
+        <div  className={styles.item} >
+          <Image fill alt='call center' src='/callcenter.jpg' />
         </div>
-        <div  className={styles.formContainer} >
-          <form action="">
+        <div  className={styles.item} >
+          <form action="" className={styles.form}>
             <input type="text" name="name" id="name" />
             <input type="email" name="email" id="email" />
             <textarea name="message" id="message" cols="30" rows="10"></textarea>
