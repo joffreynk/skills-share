@@ -1,24 +1,30 @@
-.content {
+.container {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
 
-  .img {
-    object-fit: cover;
-  }
-
-  .textContainer {
+  .content {
     display: flex;
-    flex-direction: column;
-    align-self: center;
     gap: 2rem;
-
-    .textTitle {
-      font-size: 2rem;
+    .img {
+      object-fit: cover;
     }
-
-    .textDescription {
-      font-size: 22px;
-      text-align: justify;
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      gap: 2rem;
+  
+      .textTitle {
+        font-size: 2rem;
+        color: rgb(220, 221, 223);
+      }
+  
+      .textDescription {
+        font-size: 18px;
+        text-align: justify;
+        color: rgb(180, 177, 177);
+      }
     }
   }
 }

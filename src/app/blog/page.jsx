@@ -11,9 +11,9 @@ const Blog = () => {
           <Image
             className={styles.img}
             src="/userdesign.jpg"
-            width={300}
-            height={300}
-            alt="category picture"
+            width={250}
+            height={200}
+            alt="blog picture"
           />
         </div>
         <div className={styles.textContainer}>
@@ -30,14 +30,15 @@ const Blog = () => {
         </div>
       </Link>
 
+
       <Link href="/" className={styles.content}>
         <div className={styles.imageContainer}>
           <Image
             className={styles.img}
             src="/userdesign.jpg"
-            width={300}
-            height={300}
-            alt="category picture"
+            width={250}
+            height={200}
+            alt="blog picture"
           />
         </div>
         <div className={styles.textContainer}>
@@ -54,14 +55,15 @@ const Blog = () => {
         </div>
       </Link>
 
+
       <Link href="/" className={styles.content}>
         <div className={styles.imageContainer}>
           <Image
             className={styles.img}
             src="/userdesign.jpg"
-            width={300}
-            height={300}
-            alt="category picture"
+            width={250}
+            height={200}
+            alt="blog picture"
           />
         </div>
         <div className={styles.textContainer}>
@@ -77,6 +79,7 @@ const Blog = () => {
           </p>
         </div>
       </Link>
+    
     </div>
   );
 };
