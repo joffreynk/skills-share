@@ -9,16 +9,31 @@
 
   .services {
     display: flex;
-    gap: 2.5rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 
     .service {
-      width: 300px;
+      width: 350px;
       height: 400px;
       background-size: cover !important;
       position: relative;
       background-position: -100px right; 
 
-      
+      .serviceTitle {
+        position: absolute;
+        font-size: 22px;
+        color: white;
+        background-color: rgb(75, 151, 151, 0.6);
+        padding: 7px;
+        border-radius: 4px;
+        bottom: 20px;
+        left: 15px;
+      }
+
+      .service:hover .serviceTitle {
+        background: rgb(255, 254, 254, .6);
+        color: rgb(75, 151, 151);
+      }
     }
 
     .service:nth-child(1) {
