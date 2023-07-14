@@ -4,7 +4,69 @@
   gap: 1.5rem;
 
   .firstContainer {
-    
+    display: flex;
+    gap: 2rem;
+
+    .introContainer {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .title {
+        font-size: 2.5rem;
+      }
+
+      .introduction {
+        color: rgb(167, 167, 167);
+        font-size: 1.2rem;
+        text-align: justify;
+      }
+
+      .posterUser {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .userPicture {
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+      .userName {
+        font-size: 1.5rem;
+        color: rgb(52, 73, 92);
+        font-weight: bold;
+      }
+      }
+
+    }
+
+    .imageContainer {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      height: 400px;
+
+      .blogPicture{
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+      
+
+    }
+
+
   }
 
+  .secondContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: rgb(216, 216, 216);
+    font-size: 18px;
+    text-align: justify;
+  }
+
+ 
 }

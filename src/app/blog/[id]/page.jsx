@@ -8,7 +8,10 @@ const BlogPost = () => {
         <div className={styles.introContainer}>
           <h2 className={styles.title}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
           <p className={styles.introduction}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dolorum pariatur praesentium aspernatur, sapiente error. Recusandae fuga quidem, pariatur nesciunt cupiditate itaque totam laborum blanditiis, et eos, esse culpa obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, nihil facere distinctio quas, unde ipsum dignissimos laudantium libero in et numquam ad placeat inventore! Accusamus sunt tempore nobis corrupti deserunt?</p>
-          <Image className={styles.posterUser} src='/home.jpg' width={40} height={40} alt='posted user' />
+          <div className={styles.posterUser}>
+          <Image className={styles.userPicture} src='/home.jpg' width={40} height={40} alt='posted user' />
+          <span className={styles.userName}>Joffreynk</span>
+          </div>
         </div>
         <div className={styles.imageContainer}>
         <Image className={styles.blogPicture} src='/home.jpg' fill alt='posted user' />
