@@ -1,4 +1,5 @@
 
+import CustomButton from '@/components/CustomButton';
 import styles from '@/styles/about.module.css';
 import Image from 'next/image';
 
@@ -31,7 +32,7 @@ const About = () => {
             <li>UI & UX design</li>
             <li>poster, banners, cards and other designs</li>
           </ul>
-          <button type="button">Contact us</button>
+          <CustomButton text='Contact' />
           </div>
         </div>
       </div>

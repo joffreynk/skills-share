@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import styles from '@/styles/homepage.module.css'
+import CustomButton from '@/components/CustomButton'
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
 
         <h1 className={styles.title}>The best way to learn is to share your skills with others.</h1>
         <p className={styles.description}>Join a large community, learn by sharing what you know and grow your network.</p>
-        <button type="button" className={styles.button}>see our works</button>
+        <CustomButton text='see our works' />
       </div>
       <div>
         <Image src='/hero.jpg' width={700} height={500} alt='hello image' />
