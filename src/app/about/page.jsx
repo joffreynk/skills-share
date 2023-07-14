@@ -7,9 +7,9 @@ const About = () => {
   return (
     <main className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image className={styles.img} width={800} height={500} src='/hero.jpg'  alt='about us' />
+        <Image className={styles.img} fill src='/hero.jpg'  alt='about us' />
         <div className={styles.imgText}>
-          <h1>your success is our priority</h1>
+          <h1>Your success is our priority</h1>
           <p>Lorem ipsum dolor, sit amet consectetur </p>
         </div>
       </div>
@@ -32,7 +32,7 @@ const About = () => {
             <li>UI & UX design</li>
             <li>poster, banners, cards and other designs</li>
           </ul>
-          <CustomButton text='Contact' />
+          <CustomButton text='Contact' url='/contact' />
           </div>
         </div>
       </div>

@@ -4,13 +4,22 @@
   gap: 1.5rem;
 
     .imageContainer{
-      width: 800px;
+      width: 100%;
       height: 500px;
+      position: relative;
 
       .img {
         object-fit: cover;
-        width: 800px;
-        height: 400px;
+      }
+
+      .imgText {
+        position: absolute;
+        background-color: rgb(17, 77, 54);
+        bottom: 25px;
+        left: 10px;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
       }
     }
 
