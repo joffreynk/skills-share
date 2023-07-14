@@ -1,0 +1,39 @@
+.mainTitle {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .services {
+    display: flex;
+    gap: 2.5rem;
+
+    .service {
+      width: 300px;
+      height: 400px;
+      background-size: cover !important;
+      position: relative;
+      background-position: -100px right; 
+
+      
+    }
+
+    .service:nth-child(1) {
+      background: url("/userdesign.jpg");
+    }
+
+    .service:nth-child(2) {
+      background: url("/WebDesign.jpg");
+    }
+
+    .service:nth-child(3) {
+      background: url("/collaboration.jpg") no-repeat;
+    }
+
+  }
+
+    
+}

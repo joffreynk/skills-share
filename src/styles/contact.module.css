@@ -26,7 +26,7 @@
       position: relative;
 
       .img {
-        object-fit: contain;
+        object-fit: cover;
         animation: move 3s infinite ease alternate;
       }
 
