@@ -6,7 +6,7 @@ import styles from "@/styles/blog.module.css";
 const Blog = () => {
   return (
     <div className={styles.container}>
-      <Link href="/" className={styles.content}>
+      <Link href="/blog/blogpost" className={styles.content}>
         <div className={styles.imageContainer}>
           <Image
             className={styles.img}
@@ -31,7 +31,7 @@ const Blog = () => {
       </Link>
 
 
-      <Link href="/" className={styles.content}>
+      <Link href="/blog/blogpost" className={styles.content}>
         <div className={styles.imageContainer}>
           <Image
             className={styles.img}
@@ -56,7 +56,7 @@ const Blog = () => {
       </Link>
 
 
-      <Link href="/" className={styles.content}>
+      <Link href="/blog/blogpost" className={styles.content}>
         <div className={styles.imageContainer}>
           <Image
             className={styles.img}
