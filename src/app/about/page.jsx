@@ -27,10 +27,10 @@ const About = () => {
           <h1 className={styles.title}>what are our services?</h1>
           <div className={styles.description}>
             <p className={styles.descText}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus cumque doloribus mollitia ullam fugiat. Consectetur quas tempore iure, ad nemo explicabo nam, voluptatem quisquam sequi pariatur, impedit corrupti assumenda dolorem?</p>
-          <ul>
-            <li>Fast Mobile app and website design</li>
-            <li>UI & UX design</li>
-            <li>poster, banners, cards and other designs</li>
+          <ul className={styles.list}>
+            <li className={styles.li}>Fast Mobile app and website design</li>
+            <li className={styles.li}>UI & UX design</li>
+            <li className={styles.li}>poster, banners, cards and other designs</li>
           </ul>
           <CustomButton text='Contact' url='/contact' />
           </div>

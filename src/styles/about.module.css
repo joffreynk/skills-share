@@ -5,7 +5,7 @@
 
     .imageContainer{
       width: 100%;
-      height: 500px;
+      height: calc(100vh / 2);
       position: relative;
 
       .img {
@@ -25,7 +25,39 @@
 
 
 
-    .aboutDiscriminationContainer{
+    .aboutDiscriptionContainer{
+      display: flex;
+      gap: calc(20px + 5vw);
+
+      .title {
+        font-size: 2.5rem;
+        color: rgb(112, 112, 112);
+
+      }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 18px;
+        color: rgb(158, 156, 156);
+        text-align: justify;
+
+        .list {
+          display: flex;
+          flex-direction: column;
+          gap: inherit;
+          padding-bottom: 15px;
+
+          .li {
+            list-style-type: '-';
+            padding-left: 8px;
+            color: rgb(123, 163, 150);
+          }
+        }
+      }
+
+
 
     }
 }

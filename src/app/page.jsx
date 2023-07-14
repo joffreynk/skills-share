@@ -9,7 +9,7 @@ export default function Home() {
       <div className={styles.left}>
 
         <h1 className={styles.title}>The best way to learn is to share your skills with others.</h1>
-        <p className={styles.description}>Join a large community, learn by sharing what you know and grow your network.</p>
+        <p className={styles.description}>Join a large community, learn by sharing what you know,  grow your network and win together.</p>
         <CustomButton url='/portfolio' text='see our works' />
       </div>
       <div>
