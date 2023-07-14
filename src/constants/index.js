@@ -6,8 +6,8 @@ export const navBarLinks = [
   },
   {
     id: 2,
-    title: "Portfolio",
-    url: "/portfolio"
+    title: "Services",
+    url: "/services"
   },
   {
     id: 3,

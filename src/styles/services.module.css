@@ -9,6 +9,12 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+
+  .serviceOption {
+    font-size: 2rem;
+    color: #b3b3b3;
+  }
 
   .services {
     display: flex;
