@@ -8,7 +8,10 @@
     justify-self: center;
     text-decoration: underline;
     font-size: 2.5rem;
-    
+    background: linear-gradient( rgb(18, 90, 184),  rgb(185, 162, 162));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
   }
 
 
