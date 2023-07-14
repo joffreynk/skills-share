@@ -3,6 +3,14 @@
   flex-direction: column;
   gap: 1.5rem;
 
+  .title {
+    align-self: center;
+    justify-self: center;
+    text-decoration: underline;
+    font-size: 2.5rem;
+    
+  }
+
 
   .cardContainer {
     display: flex;
@@ -15,7 +23,17 @@
       position: relative;
 
       .form {
-        
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .input {
+          font-size: 20px;
+          padding: 5px;
+          background-color: transparent;
+          color: white;
+          outline: none;
+        }
       }
     }
   }
