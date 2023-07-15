@@ -5,7 +5,7 @@ import { createContext, useState } from "react";
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [mode, setMode] = useState((localStorage.getItem('skills-share-mode') && JSON.parse(localStorage.getItem('skills-share-mode'))) || 'light');
+  const [mode, setMode] = useState((localStorage.getItem('skills-share-mode') && JSON.parse(localStorage.getItem('skills-share-mode'))) || 'dark');
   const toggle = () =>{
     setMode((prev)=>{
       const newMode  = prev ==='light' ? 'dark' : 'light';
