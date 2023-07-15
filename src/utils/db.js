@@ -7,3 +7,5 @@ const connection = async()=>{
     handleError(error);
   }
 };
+
+export default connection
