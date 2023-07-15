@@ -5,6 +5,7 @@
   border-radius: 30px;
   gap: 5px;
   position: relative;
+  cursor: pointer;
   
   .darkModeSun{
     font-size: 17px;
@@ -22,7 +23,6 @@
     position: absolute;
     border-radius: 50%;
     top: 4px;
-    left: 2px;
   }
 
 }
