@@ -1,15 +1,15 @@
 import {NextResponse} from 'next/server'
 
-import post from "@/models/postModel.js"
+import users from "@/models/userModel.js"
 import connection from "@/utils/db.js"
 
-export const GET = async(req, res)=>{
+export const GET = async(request)=>{
   try {
     await connection()
 
-    const posts = post.find()
+    const users = users.find()
 
-    return new NextResponse(posts, {status: 200})
+    return new NextResponse(JSON.stringify(users), {status: 200})
     
   } catch (error) {
     console.log('====================================');

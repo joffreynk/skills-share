@@ -2,10 +2,12 @@ import CustomButton from "@/components/CustomButton";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/blog.module.css";
+import fetcher from "@/utils/fetcher";
 
 
+const Blog = async() => {
 
-const Blog = () => {
+  const data = await fetcher('posts');
   return (
     <div className={styles.container}>
       <Link href="/blog/blogpost" className={styles.content}>
