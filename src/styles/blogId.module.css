@@ -18,7 +18,6 @@
       }
 
       .introduction {
-        color: rgb(167, 167, 167);
         font-size: 1.2rem;
         text-align: justify;
       }
@@ -63,7 +62,6 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    color: rgb(163, 160, 160);
     font-size: 1.2rem;
     text-align: justify;
   }

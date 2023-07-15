@@ -13,7 +13,6 @@
 
   .serviceOption {
     font-size: 2rem;
-    color: #b3b3b3;
   }
 
   .services {
@@ -31,7 +30,6 @@
       .serviceTitle {
         position: absolute;
         font-size: 22px;
-        color: white;
         background-color: rgb(75, 151, 151, 0.6);
         padding: 7px;
         border-radius: 4px;

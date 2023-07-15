@@ -17,13 +17,11 @@
   
       .textTitle {
         font-size: 2rem;
-        color: rgb(220, 221, 223);
       }
   
       .textDescription {
         font-size: 18px;
         text-align: justify;
-        color: rgb(180, 177, 177);
       }
     }
   }
