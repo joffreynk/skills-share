@@ -2,10 +2,9 @@ import mongoose from 'mongoose';
 
 const connection = async()=>{
   try {
-    await mongoose.connect('mongodb://127.0.0.1:27017/skills-share');
+    await mongoose.connect('mongodb://172.17.192.1:27017/skills-share');
   } catch (error) {
-    handleError(error);
-    log
+    throw new Error('Database connection error: '+ error.message)
   }
 };
 

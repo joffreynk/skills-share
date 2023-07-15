@@ -1,13 +1,13 @@
 import {NextResponse} from 'next/server'
 
-import users from "@/models/userModel.js"
+import userModel from "@/models/userModel.js"
 import connection from "@/utils/db.js"
 
 export const GET = async(request)=>{
   try {
     await connection()
 
-    const users = users.find()
+    const users = await userModel.find()
 
     return new NextResponse(JSON.stringify(users), {status: 200})
     
