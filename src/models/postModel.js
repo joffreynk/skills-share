@@ -2,23 +2,23 @@ import { Schema, model } from "mongoose";
 
 const postSchema = new Schema({
     title: {
-      type: string,
+      type: String,
       required: true,
     },
     introduction: {
-      type: string,
+      type: String,
       required: true
     },
     imgUrl: {
-      type: string,
+      type: String,
       required: true
     },
     userName: {
-        type: string,
+        type: String,
         required: true
       },
       content: {
-        type: string,
+        type: String,
         required: true
       },
 }, {timestamps: true})

@@ -1,17 +1,19 @@
-import { Schema, model } from "mongoose";
+import {Schema, model } from "mongoose";
+
+// const {Schema} = mongoose
 
 const userSchema = new Schema({
     name: {
-      type: string,
+      type: String,
       required: true
     },
     email: {
-      type: string,
+      type: String,
       unique: true,
       required: true
     },
     password: {
-      type: string,
+      type: String,
       required: true
     },
 }, {timestamps: true})
