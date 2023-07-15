@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-
-const { Schema } = mongoose
+const { Schema } = mongoose;
 
 const postSchema = new Schema({
     title: {
@@ -25,5 +24,6 @@ const postSchema = new Schema({
       },
 }, {timestamps: true})
 
+const postModel = mongoose.model.Post ? mongoose.model.Post : mongoose.model("Post", postSchema)
 
-export default mongoose.model("Post", postSchema)
+export default postModel
