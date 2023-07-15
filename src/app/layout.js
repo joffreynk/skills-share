@@ -1,9 +1,10 @@
 import NavBar from '@/components/NavBar'
 import './globals.css'
-// import { Roboto } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
+import { ThemeProvider } from '@/Context/ThemeContext'
 
-// const inter = Roboto({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'skills share',
@@ -13,11 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body >
+      <body className={inter.className} >
         <div className={`container` }>
-          <NavBar />
-          {children}
-          <Footer />
+          <ThemeProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </div>
         </body>
     </html>

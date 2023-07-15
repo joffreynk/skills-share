@@ -3,7 +3,7 @@ import  "@/styles/darkModeToggle.css";
 import { useState } from "react";
 
 const DarkModeToggle = () => {
-  const [mode, setMode] = useState(true)
+
   return (
     <div className='darkModeContainer' onClick={()=>setMode(!mode)}>
       <div className='darkModeMoon'>🌙</div>
