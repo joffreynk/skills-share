@@ -24,6 +24,6 @@ const postSchema = new Schema({
       },
 }, {timestamps: true})
 
-const postModel = mongoose.model.Post ? mongoose.model.Post : mongoose.model("Post", postSchema)
+const postModel = mongoose.models.Post || mongoose.model("Post", postSchema)
 
 export default postModel

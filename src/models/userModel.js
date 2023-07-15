@@ -15,6 +15,6 @@ const userSchema = new Schema({
       required: true
     },
 }, {timestamps: true})
-const userModel = mongoose.model.User ? mongoose.model.User : mongoose.model("User", userSchema)
+const userModel = mongoose.models.User || mongoose.model("User", userSchema)
 
 export default userModel
