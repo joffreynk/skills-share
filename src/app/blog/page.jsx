@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/blog.module.css";
 
+
+
 const Blog = () => {
   return (
     <div className={styles.container}>
