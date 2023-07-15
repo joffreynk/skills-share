@@ -24,7 +24,7 @@ const About = () => {
         </div>
 
         <div className={styles.item} >
-          <h1 className={styles.title}>what are our services?</h1>
+          <h1 className={styles.title}>What are our services?</h1>
           <div className={styles.description}>
             <p className={styles.descText}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus cumque doloribus mollitia ullam fugiat. Consectetur quas tempore iure, ad nemo explicabo nam, voluptatem quisquam sequi pariatur, impedit corrupti assumenda dolorem?</p>
           <ul className={styles.list}>

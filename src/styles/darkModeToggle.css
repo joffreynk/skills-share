@@ -1,0 +1,28 @@
+.darkModeContainer {
+  display: flex;
+  border: 1px solid green;
+  padding: 2px;
+  border-radius: 30px;
+  gap: 5px;
+  position: relative;
+  
+  .darkModeSun{
+    font-size: 17px;
+    color: rgb(224, 176, 16);
+  }
+
+  .darkModeMoon {
+    font-size: 15px;
+  }
+
+  .darkModeBall {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    border-radius: 50%;
+    top: 4px;
+    left: 2px;
+  }
+
+}
