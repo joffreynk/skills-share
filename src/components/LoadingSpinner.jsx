@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from '@/styles/loadingSpinner.module.css'
-const LoadingSpinner = () => {
+const LoadingSpinner = ({title}) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <h3 className={styles.title3}>loading blog posts</h3>
+        <h3 className={styles.title3}>{title} </h3>
         <div>
         <div className={styles.ldsEllipsis}><div></div><div></div><div></div><div></div></div>
         </div>
