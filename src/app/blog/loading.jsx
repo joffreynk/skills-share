@@ -1,11 +1,6 @@
+import LoadingSpinner from '@/components/LoadingSpinner'
 import React from 'react'
 
-const loading = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const Loading = () => (<LoadingSpinner title="Loading current blogs" />)
 
-export default loading
+export default Loading

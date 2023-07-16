@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/blog.module.css";
 import fetcher from "@/utils/fetcher";
+import { notFound } from "next/navigation";
 
 const Blog = async() => {
 
@@ -10,30 +11,28 @@ const Blog = async() => {
   
   return (
     <div className={styles.container}>
-      <Link href="/blog/blogpost" className={styles.content}>
+      {data.length ? 
+     data.map(blog=>(
+<Link key={blog._id} href={`/blog/${blog._id}`} className={styles.content}>
         <div className={styles.imageContainer}>
           <Image
             className={styles.img}
-            src="/userdesign.jpg"
+            src={blog.imgUrl}
             width={250}
             height={200}
             alt="blog picture"
           />
         </div>
         <div className={styles.textContainer}>
-          <h3 className={styles.textTitle}>Creative Mind</h3>
+          <h3 className={styles.textTitle}>{blog.title} </h3>
           <p className={styles.textDescription}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eius
-            libero vel commodi quo! Delectus, eius itaque. Numquam explicabo
-            officiis omnis pariatur, atque odio molestiae sit doloribus iusto,
-            voluptates tempora. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Similique nam, voluptas labore, maxime, laboriosam
-            molestias deleniti nemo voluptatibus quo esse ipsa totam minus non
-            enim iste in. Eos, quam sunt?
+           {blog.intro}
           </p>
         </div>
       </Link>
-    
+)) 
+       : notFound}
+
     </div>
   );
 };
