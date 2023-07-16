@@ -12,9 +12,6 @@ export const GET = async(request)=>{
     return new NextResponse(JSON.stringify(users), {status: 200})
     
   } catch (error) {
-    console.log('====================================');
-    console.log(error);
-    console.log('====================================');
     return new NextResponse('Failed to interact with database', {status: 500})
   }
 }

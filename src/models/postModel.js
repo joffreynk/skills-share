@@ -6,7 +6,7 @@ const postSchema = new Schema({
       type: String,
       required: true,
     },
-    introduction: {
+    intro: {
       type: String,
       required: true
     },
@@ -14,7 +14,7 @@ const postSchema = new Schema({
       type: String,
       required: true
     },
-    userName: {
+    username: {
         type: String,
         required: true
       },
