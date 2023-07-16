@@ -1,13 +1,12 @@
-import postModel from "@/models/postModel";
-import   connection  from "@/utils/db.js";
 import { NextResponse } from "next/server";
 
+import postModel from "@/models/postModel";
+import   connection  from "@/utils/db.js";
 
-const GET = async ({params}) => {
+export const GET = async (request, {params}) => {
   try {
     await connection();
-
-    const post = await postModel.findById({_id: params.id})
+    const post = await postModel.findById(params.id)
 
     return new NextResponse(JSON.stringify(post), {status: 200});
 

@@ -3,7 +3,7 @@ import styles from '@/styles/blogId.module.css'
 import Image from 'next/image'
 import fetcher from '@/utils/fetcher'
 const BlogPost = async({params}) => {
-  const data = await fetcher(`/posts/${params.id}`)
+  const data = await fetcher(`posts/${params.id}`)
 
   return (
     <div className={styles.mainContainer}>
