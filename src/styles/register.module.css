@@ -4,6 +4,20 @@
     align-items: center;
     gap: 2.5rem;
 
+    .title {
+      font-size: 3rem;
+      text-decoration: underline;
+      background: linear-gradient(rgb(61, 61, 214), rgb(136, 202, 82));
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .link {
+      font-size: 22px;
+      color: rgb(28, 191, 197);
+      text-decoration: underline;
+    }
+
     .form {
         display: flex;
         flex-direction: column;
@@ -26,13 +40,14 @@
         .btn {
           width: fit-content;
           align-self: center;
-          padding: 6px 10px;
+          padding: 8px 20px;
           color: rgb(255, 255, 255);
           opacity: 1;
           background: rgb(93, 32, 143);
           font-weight: 800;
           font-size: 1.5rem;
           box-shadow: 2px 6px 5px rgb(5, 153, 5, 0.3);
+          cursor: pointer;
 
         }
 
