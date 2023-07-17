@@ -73,10 +73,11 @@ const { data, error: loadingError, isLoading } = useSWR(`/api/posts/?username=${
       <div className={styles.createPosts}>
       <h2 className={styles.title}>post a blog</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <input type="text" name="name" id="name" placeholder='John Doe' minLength={2} className={styles.input}required  />
-        <input type="email" name="email" id="email" placeholder='example@gmail.com' className={styles.input} required />
-        <input type="password" name="password" id="password" placeholder='password' minLength={4} className={styles.input}required  />
-        <button  className={styles.btn}>Register</button>
+        <input type="text" name="title" id="title" placeholder='Post title' minLength={2} className={styles.input}required  />
+        <input type="text" name="intro" id="intro" placeholder='Post Introduction' className={styles.input} required />
+        <input type="url" name="imgUrl" id="imgUrl" placeholder='Image url' minLength={4} className={styles.input}required  />
+        <textarea name="content" className={styles.input}  id="content" cols="20" placeholder="post description" rows="10"></textarea>
+        <button  className={styles.btn}>Add post</button>
         {error && (<p>check your input data!</p>)}
       </form>
     </div>
