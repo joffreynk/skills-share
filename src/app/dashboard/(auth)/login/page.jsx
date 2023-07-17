@@ -8,7 +8,10 @@ const Login = () => {
   const handleSubmit = (e)=>{
     e.preventDefault();
 
-    
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    signIn('credentials', {email, password});
   }
   return (
     <div className={styles.container}>
@@ -16,7 +19,7 @@ const Login = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <input type="email" name="email" id="email" placeholder='example@gmail.com' className={styles.input} required />
         <input type="password" name="password" id="password" placeholder='password' minLength={4} className={styles.input}required  />
-        <button  className={styles.btn}>Register</button>
+        <button  className={styles.btn}>Login</button>
       </form>
 
       <div>

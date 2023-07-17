@@ -1,9 +1,10 @@
-import connection from "@/utils/db"
+import connection from "@/utils/db.js"
 import NextAuth from "next-auth"
 import CredentialsProvder  from "next-auth/providers/credentials"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import bcrypt from 'bcrypt'
+import User from "@/models/userModel.js"
 
 const handler =  NextAuth({
   providers: [
@@ -20,8 +21,8 @@ const handler =  NextAuth({
       name: 'Credentials',
       async authorize(credentials) {
         await connection();
+        const user = await User.findOne({ email: credentials.email });
         try {
-          const user = userModel.findOne({ email: credentials.email });
 
           if (user) {
             const ckeckPassword = await bcrypt.compare( credentials.password, user.password)
@@ -35,11 +36,17 @@ const handler =  NextAuth({
             throw new Error('User not found')
           }
         } catch (error) {
+          console.log('====================================');
+          console.log(error);
+          console.log('====================================');
           throw new Error(error.message)
         }
       },
     })
   ],
+  pages: {
+    error: '/dashboard/login',
+  }
 })
 
 export { handler as GET, handler as POST} 
