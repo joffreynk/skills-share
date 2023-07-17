@@ -1,5 +1,5 @@
 'use client'
-import { signIn, useSession,getSession, signOut } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
 import styles from '@/styles/login.module.css'
@@ -24,12 +24,11 @@ const Login =  () => {
         <button  className={styles.btn}>Login</button>
       </form>
 
-      <div className={styles.social} >
+      {/* <div className={styles.social} >
       <button className={styles.btn} type="button" onClick={()=> signIn('google')}>Sgn in with Google</button>
       <button className={styles.btn} type="button" onClick={()=> signIn('github')}>Sgn in with GitHub</button>
-      {/* <button className={styles.btn} onClick={() => signOut()}>Sign out</button> */}
       </div>
-      <Link className={styles.link} href='/dashboard/register' >Register to login in without social account </Link>
+      <Link className={styles.link} href='/dashboard/register' >Register to login in without social account </Link> */}
     </div>
   )
 }
