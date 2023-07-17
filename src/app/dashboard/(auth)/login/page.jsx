@@ -3,9 +3,20 @@ import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
 import styles from '@/styles/login.module.css'
+import LoadingSpinner from '@/components/LoadingSpinner'
+import { useRouter } from 'next/navigation'
+
 
 const Login =  () => {
   const session  = useSession()
+  const router = useRouter()
+
+  if(session && session.status === 'authenticated') {
+    router?.push('/dashboard')
+  }
+  
+  if(session?.status === 'loading' ) return <LoadingSpinner title='Skills share is autherizing you' />
+
 
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -14,7 +25,9 @@ const Login =  () => {
     const password = e.target[1].value;
 
     signIn('credentials', {email, password});
+    
   }
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Register</h2>
