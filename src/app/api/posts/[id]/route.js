@@ -14,3 +14,16 @@ export const GET = async (request, {params}) => {
     return new NextResponse("Failed to connect to database", {status: 500});
   }
 };
+
+
+export const DELETE = async (request, {params}) => {
+  try {
+    await connection();
+    const post = await postModel.findByIdAndDelete(params.id)
+
+    return new NextResponse('Post is deleted successfully', {status: 203});
+
+  } catch (error) {
+    return new NextResponse("Failed to connect to database", {status: 500});
+  }
+};

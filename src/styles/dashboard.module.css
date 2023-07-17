@@ -10,11 +10,12 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   
     .content {
+      border-bottom: 2px solid rgb(109, 96, 96, 0.2);
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
       .img {
         object-fit: cover;
       }
@@ -22,16 +23,26 @@
         display: flex;
         flex-direction: column;
         align-self: center;
-        gap: 2rem;
+        gap: 1.2rem;
     
         .textTitle {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
     
         .textDescription {
           font-size: 18px;
           text-align: justify;
         }
+      }
+
+      .delete {
+        height: fit-content;
+        font-size: 18px;
+        padding: 6px;
+        background: red;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
       }
     }
   }

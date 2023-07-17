@@ -21,6 +21,19 @@ const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?use
     router?.push("/dashboard/login");
     return;
   }
+
+  const deletePost = async(id) =>{
+    try {
+       await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+        'contentType': 'application/json',
+      });
+      mutate();
+      e.target.reset();
+    } catch (error) {
+      throw new Error(error.message)
+    }
+  }
   
   const handleSubmit = async(e) =>{
     e.preventDefault();
@@ -53,8 +66,12 @@ const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?use
     <div className={styles.container}>
       <div className={styles.posts}>
         {isLoading ? <LoadingSpinner title='loading blog posts' /> : loadingError ? 'Failed to fetch your posts' : data.length>0 ? data.map((blog) => (
+            <div key={blog._id}>
+
               <Link
-                key={blog._id}
+                
+
+
                 href={`/blog/${blog._id}`}
                 className={styles.content}
               >
@@ -72,6 +89,8 @@ const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?use
                   <p className={styles.textDescription}>{blog.intro}</p>
                 </div>
               </Link>
+                <button className={styles.delete} onClick={()=>deletePost(blog._id)}> delete  </button>
+            </div>
             )): "oooops! you do't have any pos"}
       </div>
       <div className={styles.createPosts}>

@@ -11,7 +11,7 @@ export const GET = async(req, res)=>{
 
     const posts = await post.find(username && { username})
 
-    return new NextResponse(JSON.stringify(posts), {status: 200})
+    return new NextResponse(JSON.stringify(posts), {status: 201})
     
   } catch (error) {
     return new NextResponse('Failed to interact with database', {status: 500})
@@ -22,14 +22,11 @@ export const POST = async(req, res)=>{
 
   const body = await req.json();
   const newpost = new post(body)
-  console.log('====================================');
-  console.log(body);
-  console.log('====================================');
 
   try {
     await connection()
     await newpost.save()
-    return new NextResponse('You have created a post', {status: 200})
+    return new NextResponse('You have created a post', {status: 201})
     
   } catch (error) {
     return new NextResponse('Failed to interact with database', {status: 500})
