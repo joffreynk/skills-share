@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [error, setError] = useState(false)
   const session = useSession();
   const router = useRouter();
-const { data, error: loadingError, isLoading } = useSWR(`/api/posts/?username=${session?.data?.name}`, (...args) => (fetch(...args).then((res) =>res.json())));
+const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?username=${session?.data?.name}`, (...args) => (fetch(...args).then((res) =>res.json())));
 
   if (session?.status === "loading")
     return <LoadingSpinner title="Skills share is autherizing you" />;
@@ -25,22 +25,28 @@ const { data, error: loadingError, isLoading } = useSWR(`/api/posts/?username=${
 
   const handleSubmit = async(e) =>{
     e.preventDefault();
-
-    const name = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
+    const title = e.target[0].value;
+    const intro = e.target[1].value;
+    const imgUrl = e.target[2].value;
+    const content = e.target[3].value;
 
     try {
-      const res = await fetch('/api/auth/register', {
+      const res = await fetch('/api/posts', {
         method: 'POST',
         'contentType': 'application/json',
-        body: JSON.stringify({name, email, password})
+        body: JSON.stringify({
+          title,
+          intro,
+          imgUrl,
+          content,
+          username: session.data.name
+        })
       });
-      error && setError(false);
-      res.ok && router.push('/dashboard/login/?message=Account successfully registered')
+      mutate();
     } catch (error) {
-      e.target[2].value = '';
-      setError(true)
+      console.log('====================================');
+      console.log(error);
+      console.log('====================================');
     }
 
   }
@@ -75,7 +81,7 @@ const { data, error: loadingError, isLoading } = useSWR(`/api/posts/?username=${
       <form className={styles.form} onSubmit={handleSubmit}>
         <input type="text" name="title" id="title" placeholder='Post title' minLength={2} className={styles.input}required  />
         <input type="text" name="intro" id="intro" placeholder='Post Introduction' className={styles.input} required />
-        <input type="url" name="imgUrl" id="imgUrl" placeholder='Image url' minLength={4} className={styles.input}required  />
+        <input type="text" name="imgUrl" id="imgUrl" placeholder='Image url' minLength={4} className={styles.input}required  />
         <textarea name="content" className={styles.input}  id="content" cols="20" placeholder="post description" rows="10"></textarea>
         <button  className={styles.btn}>Add post</button>
         {error && (<p>check your input data!</p>)}
