@@ -16,6 +16,8 @@ const handler =  NextAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
     CredentialsProvder({
+      id: 'credentials',
+      name: 'Credentials',
       async authorize(credentials) {
         await connection();
         try {
@@ -24,7 +26,8 @@ const handler =  NextAuth({
           if (user) {
             const ckeckPassword = await bcrypt.compare( credentials.password, user.password)
             if (ckeckPassword) {
-              return user
+              const {password, others} = user
+              return others
             }else {
               throw new Error('Wrong credentials! Please try again')
             }
