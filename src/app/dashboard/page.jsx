@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [error, setError] = useState(false)
   const session = useSession();
   const router = useRouter();
-const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?username=${session?.data?.name}`, (...args) => (fetch(...args).then((res) =>res.json())));
+const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?username=${session?.data?.user?.name}`, (...args) => (fetch(...args).then((res) =>res.json())));
 
   if (session?.status === "loading")
     return <LoadingSpinner title="Skills share is autherizing you" />;
@@ -21,8 +21,7 @@ const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?use
     router?.push("/dashboard/login");
     return;
   }
-
-
+  
   const handleSubmit = async(e) =>{
     e.preventDefault();
     const title = e.target[0].value;
@@ -31,7 +30,7 @@ const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?use
     const content = e.target[3].value;
 
     try {
-      const res = await fetch('/api/posts', {
+       await fetch('/api/posts', {
         method: 'POST',
         'contentType': 'application/json',
         body: JSON.stringify({
@@ -39,14 +38,13 @@ const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?use
           intro,
           imgUrl,
           content,
-          username: session.data.name
+          username: session.data.user.name
         })
       });
       mutate();
+      e.target.reset();
     } catch (error) {
-      console.log('====================================');
-      console.log(error);
-      console.log('====================================');
+      throw new Error(error.message)
     }
 
   }

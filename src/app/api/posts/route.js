@@ -17,3 +17,21 @@ export const GET = async(req, res)=>{
     return new NextResponse('Failed to interact with database', {status: 500})
   }
 }
+
+export const POST = async(req, res)=>{
+
+  const body = await req.json();
+  const newpost = new post(body)
+  console.log('====================================');
+  console.log(body);
+  console.log('====================================');
+
+  try {
+    await connection()
+    await newpost.save()
+    return new NextResponse('You have created a post', {status: 200})
+    
+  } catch (error) {
+    return new NextResponse('Failed to interact with database', {status: 500})
+  }
+}
