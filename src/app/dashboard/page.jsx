@@ -66,12 +66,9 @@ const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?use
     <div className={styles.container}>
       <div className={styles.posts}>
         {isLoading ? <LoadingSpinner title='loading blog posts' /> : loadingError ? 'Failed to fetch your posts' : data.length>0 ? data.map((blog) => (
-            <div key={blog._id}>
+            <div key={blog._id} className={styles.card}>
 
               <Link
-                
-
-
                 href={`/blog/${blog._id}`}
                 className={styles.content}
               >
@@ -98,7 +95,7 @@ const { data, error: loadingError, mutate, isLoading } = useSWR(`/api/posts/?use
       <form className={styles.form} onSubmit={handleSubmit}>
         <input type="text" name="title" id="title" placeholder='Post title' minLength={2} className={styles.input}required  />
         <input type="text" name="intro" id="intro" placeholder='Post Introduction' className={styles.input} required />
-        <input type="text" name="imgUrl" id="imgUrl" placeholder='Image url' minLength={4} className={styles.input}required  />
+        <input type="url" name="imgUrl" id="imgUrl" placeholder='Image url' minLength={4} className={styles.input}required  />
         <textarea name="content" className={styles.input}  id="content" cols="20" placeholder="post description" rows="10"></textarea>
         <button  className={styles.btn}>Add post</button>
         {error && (<p>check your input data!</p>)}
