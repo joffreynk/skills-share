@@ -1,10 +1,15 @@
 'use client'
-import { signIn, signOut } from 'next-auth/react'
+import { signIn, useSession, signOut } from 'next-auth/react'
 import Link from 'next/link'
 
 import styles from '@/styles/login.module.css'
 
 const Login = () => {
+  const session  = useSession()
+
+  console.log('====================================');
+  console.log(session);
+  console.log('====================================');
   const handleSubmit = (e)=>{
     e.preventDefault();
 

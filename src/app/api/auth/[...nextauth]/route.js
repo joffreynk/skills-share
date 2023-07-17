@@ -21,26 +21,28 @@ const handler =  NextAuth({
       name: 'Credentials',
       async authorize(credentials) {
         await connection();
-        try {
-          const user = await User.findOne({ email: credentials.email });
+        const user = await User.findOne({ email: credentials.email });
+        return user
+        // try {
           
-          if (user) {
-            const ckeckPassword = await bcrypt.compare( credentials.password, user.password)
-            if (ckeckPassword) {
-              const {password, others} = user
-              return others
-            }else {
-              throw new Error('Wrong credentials! Please try again')
-            }
-          }else {
-            throw new Error('User not found')
-          }
-        } catch (error) {
-          throw new Error(error.message)
-        }
+        //   if (user) {
+        //     const ckeckPassword = await bcrypt.compare( credentials.password, user.password)
+        //     if (ckeckPassword) {
+        //       const {password, others} = user
+        //       return others
+        //     }else {
+        //       throw new Error('Wrong credentials! Please try again')
+        //     }
+        //   }else {
+        //     throw new Error('User not found')
+        //   }
+        // } catch (error) {
+        //   throw new Error(error.message)
+        // }
       },
     })
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
     error: '/dashboard/login',
   }
