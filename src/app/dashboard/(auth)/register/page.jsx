@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 const Register = () => {
   const [error, setError] = useState(false)
-  const router  = userRouter()
+  const router  = useRouter()
 
   const handleSubmit = async(e) =>{
     e.preventDefault();
