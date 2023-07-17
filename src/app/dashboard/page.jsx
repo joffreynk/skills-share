@@ -4,7 +4,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import styles from '@/styles/dashboard.module.css'
 import useSWR from 'swr'
@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [error, setError] = useState(false)
   const session = useSession();
   const router = useRouter();
-  const { data, error: loadingError, isLoading } = useSWR(`/api/posts${session?.data?.name && (`/?username=${session?.data?.name}`)}`, (...args) => (fetch(...args).then((res) =>res.json())));
+const { data, error: loadingError, isLoading } = useSWR(`/api/posts/?username=${session?.data?.name}`, (...args) => (fetch(...args).then((res) =>res.json())));
 
   if (session?.status === "loading")
     return <LoadingSpinner title="Skills share is autherizing you" />;
@@ -45,12 +45,10 @@ const Dashboard = () => {
 
   }
 
-
   return (
     <div className={styles.container}>
       <div className={styles.posts}>
-        {data && data.length
-          ? data.map((blog) => (
+        {isLoading ? <LoadingSpinner title='loading blog posts' /> : loadingError ? 'Failed to fetch your posts' : data.length>0 ? data.map((blog) => (
               <Link
                 key={blog._id}
                 href={`/blog/${blog._id}`}
@@ -70,8 +68,7 @@ const Dashboard = () => {
                   <p className={styles.textDescription}>{blog.intro}</p>
                 </div>
               </Link>
-            ))
-          : "oooops! you do't have any pos"}
+            )): "oooops! you do't have any pos"}
       </div>
       <div className={styles.createPosts}>
       <h2 className={styles.title}>post a blog</h2>
