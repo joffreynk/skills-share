@@ -74,7 +74,7 @@ const Dashboard = () => {
           : "oooops! you do't have any pos"}
       </div>
       <div className={styles.createPosts}>
-      <h2 className={styles.title}>Register</h2>
+      <h2 className={styles.title}>post a blog</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input type="text" name="name" id="name" placeholder='John Doe' minLength={2} className={styles.input}required  />
         <input type="email" name="email" id="email" placeholder='example@gmail.com' className={styles.input} required />
@@ -82,7 +82,6 @@ const Dashboard = () => {
         <button  className={styles.btn}>Register</button>
         {error && (<p>check your input data!</p>)}
       </form>
-      <Link className={styles.link} href='/dashboard/login' >Login  with other accounts</Link>
     </div>
     </div>
   );
