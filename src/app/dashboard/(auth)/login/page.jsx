@@ -27,9 +27,9 @@ const Login =  () => {
       <div className={styles.social} >
       <button className={styles.btn} type="button" onClick={()=> signIn('google')}>Sgn in with Google</button>
       <button className={styles.btn} type="button" onClick={()=> signIn('github')}>Sgn in with GitHub</button>
-      <button className={styles.btn} onClick={() => signOut()}>Sign out</button>
-      <Link href='/dashboard/register' >Login  with other accounts</Link>
+      {/* <button className={styles.btn} onClick={() => signOut()}>Sign out</button> */}
       </div>
+      <Link className={styles.link} href='/dashboard/register' >Register to login in without social account </Link>
     </div>
   )
 }
