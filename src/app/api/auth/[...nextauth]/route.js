@@ -21,9 +21,9 @@ const handler =  NextAuth({
       name: 'Credentials',
       async authorize(credentials) {
         await connection();
-        const user = await User.findOne({ email: credentials.email });
         try {
-
+          const user = await User.findOne({ email: credentials.email });
+          
           if (user) {
             const ckeckPassword = await bcrypt.compare( credentials.password, user.password)
             if (ckeckPassword) {
@@ -36,9 +36,6 @@ const handler =  NextAuth({
             throw new Error('User not found')
           }
         } catch (error) {
-          console.log('====================================');
-          console.log(error);
-          console.log('====================================');
           throw new Error(error.message)
         }
       },
