@@ -5,11 +5,14 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
+import styles from '@/styles/dashboard.module.css'
+import useSWR from 'swr'
 
 const Dashboard = () => {
   const session = useSession();
   const router = useRouter();
+  const { data, error, isLoading } = useSWR(`/api/posts${session?.data?.name && (`/?username=${session?.data?.name}`)}`, (...args) => (fetch(...args).then((res) =>res.json())));
 
   if (session?.status === "loading")
     return <LoadingSpinner title="Skills share is autherizing you" />;
@@ -18,10 +21,11 @@ const Dashboard = () => {
     return;
   }
 
+
   return (
     <div className={styles.container}>
       <div className={styles.posts}>
-        {data.length
+        {data &&data.length
           ? data.map((blog) => (
               <Link
                 key={blog._id}
