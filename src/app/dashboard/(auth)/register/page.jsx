@@ -1,15 +1,43 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import styles from '@/styles/register.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 const Register = () => {
+  const [error, setError] = useState(false)
+  const router  = userRouter()
+
+  const handleSubmit = async(e) =>{
+    e.preventDefault();
+
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        'contentType': 'application/json',
+        body: JSON.stringify({name, email, password})
+      });
+      error && setError(false);
+      res.ok && router.push('/dashboard/login/message=Account successfully registered')
+    } catch (error) {
+      e.target[2].value = '';
+      setError(true)
+    }
+
+  }
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Register</h2>
-      <form className={styles.form}>
-        <input type="text" name="name" id="name" placeholder='John Doe' className={styles.input}required  />
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input type="text" name="name" id="name" placeholder='John Doe' minLength={2} className={styles.input}required  />
         <input type="email" name="email" id="email" placeholder='example@gmail.com' className={styles.input} required />
-        <input type="password" name="password" id="password" placeholder='password' className={styles.input}required  />
-        <button type="submit" className={styles.btn}>Register</button>
+        <input type="password" name="password" id="password" placeholder='password' minLength={4} className={styles.input}required  />
+        <button  className={styles.btn}>Register</button>
+        {error && (<p>check your input data!</p>)}
       </form>
       <Link className={styles.link} href='/dashboard/login' >Login  with other accounts</Link>
     </div>
