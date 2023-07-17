@@ -1,6 +1,6 @@
 import User from "@/models/userModel";
 import connection from "@/utils/db";
-import {bcrypt} from 'bcryptjs'
+import bcrypt from 'bcrypt'
 import { NextResponse } from "next/server";
 export const POST = async(request, {params})=> {
   
@@ -8,7 +8,7 @@ export const POST = async(request, {params})=> {
     const {name, email, password} = await request.json();
     await connection();
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hashSync(password, 5);
     const user = new User({name, email, password: hashedPassword});
     await user.save()
 

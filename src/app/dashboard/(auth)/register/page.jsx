@@ -22,7 +22,7 @@ const Register = () => {
         body: JSON.stringify({name, email, password})
       });
       error && setError(false);
-      res.ok && router.push('/dashboard/login/message=Account successfully registered')
+      res.ok && router.push('/dashboard/login/?message=Account successfully registered')
     } catch (error) {
       e.target[2].value = '';
       setError(true)
