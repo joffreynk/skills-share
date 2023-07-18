@@ -13,7 +13,6 @@ const Dashboard = () => {
   const [error, setError] = useState(false);
   const session = useSession();
   const router = useRouter();
-  console.log(session);
   const {
     data,
     error: loadingError,
