@@ -4,9 +4,20 @@ import React, { useState } from 'react'
 import styles from '@/styles/register.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import LoadingSpinner from "@/components/LoadingSpinner";
+import { useSession } from "next-auth/react";
+
+
 const Register = () => {
   const [error, setError] = useState(false)
   const router  = useRouter()
+  const session = useSession();
+  if (session && session.status === "authenticated") {
+    router?.push("/dashboard");
+  }
+
+  if (session?.status === "loading")
+    return <LoadingSpinner title="Skills share is authorizing you" />;
 
   const handleSubmit = async(e) =>{
     e.preventDefault();
@@ -39,7 +50,7 @@ const Register = () => {
         <button  className={styles.btn}>Register</button>
         {error && (<p>check your input data!</p>)}
       </form>
-      <Link className={styles.link} href='/dashboard/login' >Login  with other accounts</Link>
+      <Link className={styles.link} href='/dashboard/login' >Login  with an existing account</Link>
     </div>
   )
 }
