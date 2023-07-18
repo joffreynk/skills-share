@@ -52,4 +52,27 @@
         }
 
     }
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 400px;
+      
+      .btn {
+        width: fit-content;
+        align-self: center;
+        padding: 8px 20px;
+        align-self: self-start;
+        color: rgb(204, 200, 200);
+        opacity: 1;
+        background: rgb(143, 136, 32);
+        font-weight: 800;
+        font-size: 1.5rem;
+        box-shadow: 2px 6px 5px rgb(5, 153, 5, 0.3);
+        border: none;
+        cursor: pointer;
+        border-radius: 30px;
+      }
+    }
 }

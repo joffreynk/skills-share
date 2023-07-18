@@ -5,7 +5,7 @@ import styles from '@/styles/register.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import LoadingSpinner from "@/components/LoadingSpinner";
-import { useSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 
 
 const Register = () => {
@@ -50,6 +50,22 @@ const Register = () => {
         <button  className={styles.btn}>Register</button>
         {error && (<p>check your input data!</p>)}
       </form>
+      <div className={styles.social}>
+        <button
+          className={styles.btn}
+          type="button"
+          onClick={() => signIn("google")}
+        >
+          Sgn up with Google
+        </button>
+        <button
+          className={styles.btn}
+          type="button"
+          onClick={() => signIn("github")}
+        >
+          Sgn up with GitHub
+        </button>
+      </div>
       <Link className={styles.link} href='/dashboard/login' >Login  with an existing account</Link>
     </div>
   )
