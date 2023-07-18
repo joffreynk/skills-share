@@ -68,7 +68,7 @@ const Login = () => {
         </button>
       </div>
       <Link className={styles.link} href="/dashboard/register">
-        Register to login in without social account{" "}
+        Register to login in without social account
       </Link>
     </div>
   );
