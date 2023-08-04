@@ -4,7 +4,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import styles from "@/styles/dashboard.module.css";
 import useSWR from "swr";
@@ -63,7 +63,9 @@ const Dashboard = () => {
       });
       mutate();
       e.target.reset();
+      setError(false)
     } catch (error) {
+      setError(true)
       throw new Error(error.message);
     }
   };
@@ -103,7 +105,7 @@ const Dashboard = () => {
             </div>
           ))
         ) : (
-          "oooops! you do't have any pos"
+          "oooops! you do't have any post"
         )}
       </div>
       <div className={styles.createPosts}>
