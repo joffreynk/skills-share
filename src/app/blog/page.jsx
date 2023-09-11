@@ -1,4 +1,5 @@
-import CustomButton from "@/components/CustomButton";
+'use server'
+
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/blog.module.css";
@@ -31,7 +32,7 @@ const Blog = async() => {
         </div>
       </Link>
 )) 
-       : notFound}
+       : notFound()}
 
     </div>
   );

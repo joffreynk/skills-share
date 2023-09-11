@@ -2,6 +2,9 @@
 const nextConfig = {
   images: {
     domains: ["www.pexels.com"],
+  },
+  experimental: {
+    serverActions: true,
   }
 }
 
