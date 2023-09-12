@@ -1,16 +1,20 @@
 "use client";
 
-import LoadingSpinner from "@/components/LoadingSpinner";
+import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import "@uploadthing/react/styles.css";
+
+import LoadingSpinner from "@/components/LoadingSpinner";
 import styles from "@/styles/dashboard.module.css";
-import useSWR from "swr";
+import { UploadButton } from "@/utils/uploadthing";
 
 const Dashboard = () => {
   const [error, setError] = useState(false);
+  const [ImageUrl, setImageUrl] = useState('')
   const session = useSession();
   const router = useRouter();
   const {
@@ -46,24 +50,26 @@ const Dashboard = () => {
     e.preventDefault();
     const title = e.target[0].value;
     const intro = e.target[1].value;
-    const imgUrl = e.target[2].value;
-    const content = e.target[3].value;
+    const content = e.target[2].value;
 
     try {
-      await fetch("/api/posts", {
+      const post = await fetch("/api/posts", {
         method: "POST",
         contentType: "application/json",
         body: JSON.stringify({
           title,
           intro,
-          imgUrl,
+          imgUrl: ImageUrl,
           content,
           username: session.data.user.name,
         }),
       });
       mutate();
-      e.target.reset();
-      setError(false)
+      if(post.ok){
+        e.target.reset();
+        setImageUrl('')
+        setError(false)
+      }
     } catch (error) {
       setError(true)
       throw new Error(error.message);
@@ -128,15 +134,23 @@ const Dashboard = () => {
             className={styles.input}
             required
           />
-          <input
-            type="url"
-            name="imgUrl"
-            id="imgUrl"
-            placeholder="Image url"
-            minLength={4}
-            className={styles.input}
-            required
-          />
+
+          {ImageUrl.length > 5 ? (
+            <Image src={ImageUrl} width={250} height={150} alt="blog picture" />
+          ) : (
+            <UploadButton
+              endpoint="imageUploader"
+              onClientUploadComplete={(res) => {
+                // Do something with the response
+                setImageUrl(res[0].url);
+              }}
+              onUploadError={(error) => {
+                // Do something with the error.
+                alert(`ERROR! ${error.message}`);
+              }}
+            />
+          )}
+
           <textarea
             name="content"
             className={styles.input}
