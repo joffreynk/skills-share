@@ -79,6 +79,8 @@
         flex-direction: column;
         width: 500px;
         gap: 1.2rem;
+        width: 100%;
+        justify-items: flex-start;
 
         .input, .btn{
           font-size: 22px;
@@ -95,7 +97,6 @@
 
         .btn {
           width: fit-content;
-          align-self: center;
           padding: 8px 20px;
           color: rgb(255, 255, 255);
           opacity: 1;
