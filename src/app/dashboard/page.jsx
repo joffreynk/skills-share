@@ -134,23 +134,25 @@ const Dashboard = () => {
             className={styles.input}
             required
           />
+          <div>
+            {ImageUrl.length > 5 ? (
+              <Image src={ImageUrl} width={250} height={150} alt="blog picture" />
+            ) : (
+              <UploadButton
+                className={styles.uploadButton}
+                endpoint="imageUploader"
+                onClientUploadComplete={(res) => {
+                  // Do something with the response
+                  setImageUrl(res[0].url);
+                }}
+                onUploadError={(error) => {
+                  // Do something with the error.
+                  alert(`ERROR! ${error.message}`);
+                }}
+              />
+            )}
+          </div>
 
-          {ImageUrl.length > 5 ? (
-            <Image src={ImageUrl} width={250} height={150} alt="blog picture" />
-          ) : (
-            <UploadButton
-              className={styles.uploadButton}
-              endpoint="imageUploader"
-              onClientUploadComplete={(res) => {
-                // Do something with the response
-                setImageUrl(res[0].url);
-              }}
-              onUploadError={(error) => {
-                // Do something with the error.
-                alert(`ERROR! ${error.message}`);
-              }}
-            />
-          )}
 
           <textarea
             name="content"
@@ -160,7 +162,9 @@ const Dashboard = () => {
             placeholder="post description"
             rows="10"
           ></textarea>
+          <div>
           <button className={styles.btn}>Add post</button>
+          </div>
           {error && <p>check your input data!</p>}
         </form>
       </div>
