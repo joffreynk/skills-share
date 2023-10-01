@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-// import "@uploadthing/react/styles.css";
+import "@uploadthing/react/styles.css";
 
 import LoadingSpinner from "@/components/LoadingSpinner";
 import styles from "@/styles/dashboard.module.css";
