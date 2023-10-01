@@ -139,6 +139,7 @@ const Dashboard = () => {
             <Image src={ImageUrl} width={250} height={150} alt="blog picture" />
           ) : (
             <UploadButton
+              className={styles.uploadButton}
               endpoint="imageUploader"
               onClientUploadComplete={(res) => {
                 // Do something with the response
